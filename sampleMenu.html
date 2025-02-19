@@ -1,0 +1,935 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Responsive Slider</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Dancing+Script&display=swap"
+    />
+
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400..700&family=Inria+Sans:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&family=Inter+Tight:ital,wght@0,100..900;1,100..900&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Kanit:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Sofadi+One&display=swap"
+      rel="stylesheet"
+    />
+
+    <link rel="stylesheet" href="css/homePage.css" />
+    <style>
+      h1 {
+        font-family: 'Dancing Script', cursive;
+      }
+      /* Main header container */
+      .logo-image {
+        width: 60px;
+        height: 60px;
+        border-radius: 50%; /* Makes the image circular */
+        object-fit: cover; /* Ensures the image doesn't distort */
+      }
+
+      .header-container {
+        /* background-color: #f7f8ee; */
+        background-color: #fdf6e3;
+        padding: 10px 0;
+        border-bottom: 1px solid #e0e0e0;
+      }
+
+      .header-content {
+        display: flex;
+        justify-content: space-between; /* Space between brand, search, and icons */
+        align-items: center;
+        flex-wrap: wrap;
+        gap: 10px; /* Adds a small gap between items when wrapping */
+      }
+
+      .brand-name {
+        margin-left: 10px; /* Reduce spacing between the image and brand name */
+        font-size: 24px;
+        font-weight: bold;
+      }
+
+      .search-bar {
+        max-width: 450px; /* Slightly reduced width for compact look */
+        width: 100%;
+        margin: 0;
+      }
+
+      .icon-container {
+        font-size: 1.2rem;
+        display: flex;
+        align-items: center;
+      }
+
+      .icon-container a {
+        margin-right: 15px;
+        position: relative;
+      }
+
+      /* Navbar styles */
+      .navbar {
+        background-color: #faf9f8;
+      }
+
+      .navbar .nav-link {
+        color: #333;
+        font-weight: 500;
+      }
+
+      .navbar .nav-link:hover {
+        color: #df6060;
+        background-color: rgba(94, 24, 24, 0.1);
+      }
+
+      /* Dropdown menu styles */
+      .dropdown-menu.mega-menu {
+        display: none;
+        position: absolute;
+        left: 0;
+        right: 0;
+        background-color: #fff;
+        border: none;
+        box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+      }
+
+      .dropdown-menu.mega-menu .dropdown-header {
+        font-weight: bold;
+        color: #333;
+      }
+
+      .mega-dropdown:hover .dropdown-menu {
+        display: block;
+      }
+
+      .dropdown-item:hover {
+        color: #973737;
+        background-color: #f8f9fa;
+      }
+
+      /* Responsive adjustments for mobile view */
+      @media (max-width: 992px) {
+        .dropdown-menu.mega-menu {
+          position: static;
+          display: block;
+        }
+      }
+
+      /* Media queries for responsiveness */
+      @media (max-width: 992px) {
+        .header-content {
+          justify-content: center;
+        }
+
+        .search-bar {
+          margin: 10px 0; /* Adds margin on smaller screens for spacing */
+        }
+      }
+
+      @media (max-width: 576px) {
+        .brand-name {
+          font-size: 1.25rem;
+        }
+
+        .search-bar {
+          max-width: 100%;
+          margin: 10px 0;
+        }
+
+        .icon-container a {
+          margin-right: 10px;
+        }
+      }
+
+      .bg-image {
+        /* Use the updated path */
+        background-image: url('/image/aboutcollection.avif');
+        background-size: cover;
+        background-position: center;
+        min-height: 50vh;
+        height: 100vh;
+        background-attachment: fixed;
+        /* added under */
+        position: relative;
+      }
+
+      .content {
+        position: absolute; /* Position relative to .bg-image */
+        top: 50%;
+        right: 0%; /* Adjust as needed for alignment */
+        transform: translateY(-50%); /* Center vertically */
+        z-index: 2;
+        display: flex;
+        justify-content: flex-end;
+        align-items: center;
+      }
+      .info-box {
+        background-color: rgba(10, 8, 8, 0.7);
+        padding: 60px;
+
+        border-radius: 50px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+        max-width: 700px;
+        text-align: center;
+      }
+      .info-box p {
+        font-size: 30px;
+        color: #333;
+        margin-bottom: 20px;
+      }
+      .btn-custom {
+        background-color: #ff5722;
+        color: white;
+        border: none;
+        padding: 10px 20px;
+        font-size: 1rem;
+        border-radius: 5px;
+        transition: background-color 0.3s ease;
+        text-decoration: none;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Header Section -->
+    <div class="header-container">
+      <div class="container">
+        <div class="header-content">
+          <div class="brand-name">
+            <img src="videos/logo2.webp" class="logo-image" />
+            StyleSphere
+          </div>
+
+          <!-- Search Bar -->
+          <form class="d-flex search-bar">
+            <input
+              class="form-control me-2"
+              type="search"
+              placeholder="Find your favourites"
+              aria-label="Search"
+            />
+            <button class="btn btn-outline-dark me-4" type="submit">
+              <i class="bi bi-search"></i>
+            </button>
+          </form>
+
+          <!-- Icons -->
+          <div class="d-flex align-items-center icon-container">
+            <a href="#" class="nav-link nav-icons">
+              <i class="bi bi-truck"></i>
+            </a>
+            <a href="#" class="nav-link nav-icons">
+              <i class="bi bi-person"></i>
+            </a>
+            <a href="#" class="nav-link nav-icons position-relative">
+              <i class="bi bi-cart"></i>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <nav class="navbar navbar-expand-lg navbar-light">
+      <div class="container">
+        <!-- Toggler for mobile view -->
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarNav"
+          aria-controls="navbarNav"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <!-- Navbar links -->
+        <div
+          class="collapse navbar-collapse justify-content-center"
+          id="navbarNav"
+        >
+          <ul class="navbar-nav">
+            <!-- Men Section -->
+            <li class="nav-item mega-dropdown">
+              <a
+                class="nav-link"
+                href="#"
+                id="menDropdown"
+                role="button"
+                aria-expanded="false"
+              >
+                Men
+              </a>
+              <div
+                class="dropdown-menu mega-menu p-4"
+                aria-labelledby="menDropdown"
+              >
+                <div class="row">
+                  <div class="col-md-4">
+                    <h6 class="dropdown-header">Men's Unstitched</h6>
+                    <a class="dropdown-item" href="men.html#men-unstitched"
+                      >Fall/Winter '24</a
+                    >
+                    <a class="dropdown-item" href="men.html#men-unstitched"
+                      >Festive '24</a
+                    >
+                    <a class="dropdown-item" href="men.html#men-unstitched"
+                      >Shawls</a
+                    >
+                    <a class="dropdown-item" href="men.html#men-unstitched"
+                      >Fabric Glossary</a
+                    >
+                  </div>
+                  <div class="col-md-4">
+                    <h6 class="dropdown-header">Men's Stitched</h6>
+                    <a class="dropdown-item" href="men.html#men-stitched"
+                      >Winter '24</a
+                    >
+                    <a class="dropdown-item" href="men.html#men-stitched"
+                      >Festive '24</a
+                    >
+                    <a class="dropdown-item" href="men.html#men-stitched"
+                      >Kurtas</a
+                    >
+                    <a class="dropdown-item" href="men.html#men-stitched"
+                      >Outfits</a
+                    >
+                  </div>
+                  <div class="col-md-4">
+                    <h6 class="dropdown-header">Core Collection</h6>
+                    <a class="dropdown-item" href="men.html#men-core"
+                      >Blazers</a
+                    >
+                    <a class="dropdown-item" href="men.html#men-core"
+                      >Waistcoats</a
+                    >
+                    <a class="dropdown-item" href="men.html#men-core"
+                      >Bottoms</a
+                    >
+                  </div>
+                </div>
+              </div>
+            </li>
+
+            <!-- Women Section -->
+            <li class="nav-item mega-dropdown">
+              <a
+                class="nav-link"
+                href="#"
+                id="womenDropdown"
+                role="button"
+                aria-expanded="false"
+              >
+                Women
+              </a>
+              <div
+                class="dropdown-menu mega-menu p-4"
+                aria-labelledby="womenDropdown"
+              >
+                <div class="row">
+                  <div class="col-md-4">
+                    <h6 class="dropdown-header">Women's Unstitched</h6>
+                    <a
+                      class="dropdown-item"
+                      href="womenCollection.html#women-unstitched"
+                      >Fall/Winter '24</a
+                    >
+                    <a
+                      class="dropdown-item"
+                      href="womenCollection.html#women-unstitched"
+                      >Festive '24</a
+                    >
+                    <a
+                      class="dropdown-item"
+                      href="womenCollection.html#women-unstitched"
+                      >Shawls</a
+                    >
+                  </div>
+                  <div class="col-md-4">
+                    <h6 class="dropdown-header">Women's Stitched</h6>
+                    <a
+                      class="dropdown-item"
+                      href="womenCollection.html#women-stitched"
+                      >Winter '24</a
+                    >
+                    <a
+                      class="dropdown-item"
+                      href="womenCollection.html#women-stitched"
+                      >Festive '24</a
+                    >
+                    <a
+                      class="dropdown-item"
+                      href="womenCollection.html#women-stitched"
+                      >Kurtas</a
+                    >
+                    <a
+                      class="dropdown-item"
+                      href="womenCollection.html#women-stitched"
+                      >Outfits</a
+                    >
+                  </div>
+                  <div class="col-md-4">
+                    <h6 class="dropdown-header">Core Collection</h6>
+                    <a
+                      class="dropdown-item"
+                      href="womenCollection.html#women-core"
+                      >Bottoms</a
+                    >
+                  </div>
+                </div>
+              </div>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="menu.html">Shop</a>
+            </li>
+            <!-- More sections -->
+            <li class="nav-item">
+              <a class="nav-link" href="#">Home</a>
+            </li>
+
+            <li class="nav-item">
+              <a class="nav-link" href="about.html">About Us</a>
+            </li>
+
+            <li class="nav-item">
+              <a class="nav-link" href="contactus.html">Contact Us</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="FAQs.html">FAQs</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="login2.html" style="color: #881337"
+                >Login/Sign Up</a
+              >
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Carousel -->
+    <div id="mainCarousel" class="carousel slide" data-bs-ride="carousel">
+      <div class="carousel-inner">
+        <!-- Slide 1: Video -->
+        <div class="carousel-item active">
+          <video
+            class="w-100"
+            autoplay
+            muted
+            loop
+            style="object-fit: cover; height: 100vh"
+          >
+            <source
+              src="videos/8306452-uhd_4096_2160_25fps.mp4"
+              type="video/mp4"
+            />
+            Your browser does not support the video tag.
+          </video>
+
+          <div class="slider-content">
+            <h1>Discover Your Perfect Style</h1>
+            <p>Explore timeless fashion that reflects your unique style.</p>
+            <a href="#" class="btn btn-slider">Explore Now</a>
+          </div>
+        </div>
+
+        <!-- Slide 2: Image -->
+        <div class="carousel-item">
+          <!-- <img
+            src="videos/carrousel1.webp"
+            class="d-block w-100"
+            style="object-fit: cover; height: 100vh"
+            alt="Placeholder Image"
+          /> -->
+          <video
+            class="w-100"
+            autoplay
+            muted
+            loop
+            style="object-fit: cover; height: 100vh"
+          >
+            <source
+              src="collectionVideos/9710109-uhd_3840_2160_25fps.mp4"
+              type="video/mp4"
+            />
+            Your browser does not support the video tag.
+          </video>
+
+          <div class="slider-content">
+            <h1>Elevate Your Wardrobe</h1>
+            <p>
+              Discover chic, versatile pieces designed to enhance your everyday
+              style at StyleSphere.
+            </p>
+            <a href="#" class="btn btn-slider">Explore Now</a>
+          </div>
+        </div>
+
+        <!-- Slide 3: Image -->
+        <div class="carousel-item">
+          <video
+            class="w-100"
+            autoplay
+            muted
+            loop
+            style="object-fit: cover; height: 100vh"
+          >
+            <source
+              src="collectionVideos/856434-hd_1920_1080_25fps.mp4"
+              type="video/mp4"
+            />
+            Your browser does not support the video tag.
+          </video>
+
+          <div class="slider-content">
+            <h1>Style Meets Comfort</h1>
+            <p>
+              Find effortlessly stylish outfits that combine comfort and fashion
+            </p>
+            <a href="#" class="btn btn-slider">Explore Now</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Controls -->
+      <button
+        class="carousel-control-prev"
+        type="button"
+        data-bs-target="#mainCarousel"
+        data-bs-slide="prev"
+      >
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Previous</span>
+      </button>
+      <button
+        class="carousel-control-next"
+        type="button"
+        data-bs-target="#mainCarousel"
+        data-bs-slide="next"
+      >
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Next</span>
+      </button>
+    </div>
+
+    <!-- Featured Products Section -->
+    <div class="container my-4" style="background-color: #f7f8ee">
+      <h2 class="section-title" style="color: #e67e22; font-weight: bold">
+        Featured Products
+      </h2>
+      <div class="row text-center mb-0">
+        <!-- Product Card 1 -->
+        <div
+          class="col-lg-3 col-md-4 col-sm-6 mb-4"
+          style="background-color: #fcf5eb"
+        >
+          <div class="card product-card position-relative">
+            <img
+              src="image/bestSeller1.jpeg"
+              class="card-img-top"
+              alt="Product 1"
+            />
+            <div class="overlay">
+              <button class="btn btn-outline-dark btn-sm">Quick View</button>
+              <button class="btn btn-outline-dark btn-sm mt-2">
+                Add to Cart
+              </button>
+            </div>
+            <div class="card-body">
+              <h5 class="card-title">I'm a Product</h5>
+              <p class="card-text">$140.00</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-3 col-md-4 col-sm-6 mb-4">
+          <div class="card product-card position-relative">
+            <span class="best-seller-tag">Best Seller</span>
+            <img src="image/bs2.jpeg" class="card-img-top" alt="Product 2" />
+            <div class="overlay">
+              <button class="btn btn-outline-dark btn-sm">Quick View</button>
+              <button class="btn btn-outline-dark btn-sm mt-2">
+                Add to Cart
+              </button>
+            </div>
+            <div class="card-body">
+              <h5 class="card-title">I'm a Product</h5>
+              <p class="card-text">$110.00</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Product Card 3 -->
+        <div class="col-lg-3 col-md-4 col-sm-6 mb-4">
+          <div class="card product-card position-relative">
+            <img src="image/bs3.jpeg" class="card-img-top" alt="Product 3" />
+            <div class="overlay">
+              <button class="btn btn-outline-dark btn-sm">Quick View</button>
+              <button class="btn btn-outline-dark btn-sm mt-2">
+                Add to Cart
+              </button>
+            </div>
+            <div class="card-body">
+              <h5 class="card-title">I'm a Product</h5>
+              <p class="card-text">$140.00</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Product Card 4 -->
+        <div class="col-lg-3 col-md-4 col-sm-6 mb-4">
+          <div class="card product-card position-relative">
+            <img src="image/bs4.webp" class="card-img-top" alt="Product 3" />
+            <div class="overlay">
+              <button class="btn btn-outline-dark btn-sm">Quick View</button>
+              <button class="btn btn-outline-dark btn-sm mt-2">
+                Add to Cart
+              </button>
+            </div>
+            <div class="card-body">
+              <h5 class="card-title">I'm a Product</h5>
+              <p class="card-text">$140.00</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-12 text-center m-0">
+        <button
+          type="submit"
+          class="btn btn-custom mt-4"
+          style="background-color: #fed7aa"
+        >
+          Shop All
+        </button>
+      </div>
+    </div>
+
+    <!-- About the Collection Section -->
+    <section class="py-5">
+      <div class="container">
+        <div class="row align-items-center">
+          <!-- Image Column -->
+          <div class="col-lg-6 mb-4 mb-lg-0">
+            <video
+              class="w-100"
+              autoplay
+              muted
+              loop
+              style="object-fit: cover; height: 100vh"
+            >
+              <source
+                src="videos/8306452-uhd_4096_2160_25fps.mp4"
+                type="video/mp4"
+              />
+              Your browser does not support the video tag.
+            </video>
+          </div>
+
+          <!-- Text Column -->
+          <div class="col-lg-6">
+            <h2
+              class="section-title"
+              style="
+                color: #e7922a;
+                font-family: 'Georgia', serif;
+                text-align: center;
+                font-size: 36px;
+              "
+            >
+              About the Collection
+            </h2>
+            <p
+              style="
+                font-family: 'Arial', sans-serif;
+                text-align: center;
+                font-size: 18px;
+                line-height: 1.6;
+                color: #757575;
+              "
+            >
+              Discover the essence of fashion with our latest collection, where
+              every piece tells a story of style, comfort, and elegance. Our
+              carefully curated outfits blend modern trends with timeless
+              designs to offer you the best in fashion. From casual wear to
+              sophisticated evening attire, this collection is designed to make
+              you feel confident and stylish no matter the occasion.
+            </p>
+            <p
+              style="
+                font-family: 'Arial', sans-serif;
+                text-align: center;
+                font-size: 18px;
+                line-height: 1.6;
+                color: #757575;
+              "
+            >
+              Each outfit in this collection is made with premium materials,
+              ensuring quality and durability. Explore our diverse range of
+              clothing and find the perfect look for your wardrobe!
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- chat us -->
+    <div class="bg-image">
+      <h1
+        style="
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          font-size: 70px;
+          font-weight: bold;
+          color: #881337;
+        "
+      >
+        Chat With Us
+      </h1>
+      <!-- Content block -->
+      <div class="content">
+        <div class="info-box">
+          <p>
+            If you love us, tell us. Have suggestions? Share with us. Your
+            feedback means the world to us!
+          </p>
+          <a href="get-in-touch.html" class="btn btn-custom">Let’s Talk</a>
+        </div>
+      </div>
+    </div>
+    <!-- Customer Reviews Section -->
+    <section class="py-5" style="background-color: #f7f8ee">
+      <div class="container">
+        <h2 class="section-title text-center mb-5" style="color: #e7922a">
+          Customer Reviews
+        </h2>
+
+        <!-- Carousel -->
+        <div
+          id="customerReviewsCarousel"
+          class="carousel slide"
+          data-bs-ride="carousel"
+        >
+          <div class="carousel-inner">
+            <!-- Review 1 -->
+            <div class="carousel-item active">
+              <div class="d-flex justify-content-center">
+                <div class="card shadow-lg p-4">
+                  <div class="card-body text-center">
+                    <p class="card-text">
+                      "I absolutely love the quality of the outfits from
+                      StyleSphere. They are comfortable, stylish, and perfect
+                      for every occasion!"
+                    </p>
+                    <h5 class="mt-4">- Sarah M.</h5>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Review 2 -->
+            <div class="carousel-item">
+              <div class="d-flex justify-content-center">
+                <div class="card shadow-lg p-4">
+                  <div class="card-body text-center">
+                    <p class="card-text">
+                      "The delivery was quick, and the clothes exceeded my
+                      expectations. I highly recommend StyleSphere to anyone
+                      looking for trendy fashion!"
+                    </p>
+                    <h5 class="mt-4">- John D.</h5>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Review 3 -->
+            <div class="carousel-item">
+              <div class="d-flex justify-content-center">
+                <div class="card shadow-lg p-4">
+                  <div class="card-body text-center">
+                    <p class="card-text">
+                      "Excellent customer service and the collection is just
+                      stunning. I’ve found my new favorite place to shop for
+                      clothes!"
+                    </p>
+                    <h5 class="mt-4">- Emily R.</h5>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Review 4 (Optional) -->
+            <div class="carousel-item">
+              <div class="d-flex justify-content-center">
+                <div class="card shadow-lg p-4">
+                  <div class="card-body text-center">
+                    <p class="card-text">
+                      "Great prices and premium quality! I'm so happy with my
+                      purchase from StyleSphere. Definitely coming back for
+                      more!"
+                    </p>
+                    <h5 class="mt-4">- Michael T.</h5>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Carousel Controls -->
+          <button
+            class="carousel-control-prev"
+            type="button"
+            data-bs-target="#customerReviewsCarousel"
+            data-bs-slide="prev"
+          >
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Previous</span>
+          </button>
+          <button
+            class="carousel-control-next"
+            type="button"
+            data-bs-target="#customerReviewsCarousel"
+            data-bs-slide="next"
+          >
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Next</span>
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <footer class="bg-light text-dark pt-2 pb-2">
+      <!-- Single container with 4 columns -->
+      <div class="container text-decoration-none">
+        <div class="row">
+          <!-- Customer Care Column -->
+          <div class="col-lg-3 col-md-6 mb-2">
+            <ul class="list-unstyled">
+              <h5>Customer Care</h5>
+              <li>
+                <a href="#" class="text-dark text-decoration-none"
+                  >My Account</a
+                >
+              </li>
+              <li>
+                <a href="#" class="text-dark text-decoration-none"
+                  >Contact Us</a
+                >
+              </li>
+              <li>
+                <a href="#" class="text-dark text-decoration-none">FAQs</a>
+              </li>
+            </ul>
+          </div>
+
+          <!-- Contact Us Column -->
+          <div class="col-lg-3 col-md-6 mb-4">
+            <h5>Contact Us</h5>
+            <p>
+              StyleSphere Retail Head Office 1.5-km, Defence Road, Opposite
+              University Of Lahore<br />
+            </p>
+            <p>Contact Number:<br />+92 42 111 333 465</p>
+            <p>Office Timing:<br />Mon - Sat : 10am - 6pm</p>
+            <p>
+              Email:<br /><a
+                href="mailto:sales@styleSphere.com"
+                class="text-dark text-decoration-none"
+                >sales@StyleSphere.com</a
+              >
+            </p>
+          </div>
+
+          <!-- Follow Us Column -->
+          <div class="col-lg-3 col-md-6 mb-4">
+            <p style="font-weight: bold">Follow Us</p>
+            <a
+              href="https://www.facebook.com"
+              class="text-dark me-3"
+              target="_blank"
+              title="Facebook"
+            >
+              <i class="fab fa-facebook fa-lg"></i>
+            </a>
+            <a
+              href="https://www.twitter.com"
+              class="text-dark me-3"
+              target="_blank"
+              title="Twitter"
+            >
+              <i class="fab fa-twitter fa-lg"></i>
+            </a>
+            <a
+              href="https://www.instagram.com"
+              class="text-dark me-3"
+              target="_blank"
+              title="Instagram"
+            >
+              <i class="fab fa-instagram fa-lg"></i>
+            </a>
+            <a
+              href="https://www.linkedin.com"
+              class="text-dark"
+              target="_blank"
+              title="LinkedIn"
+            >
+              <i class="fab fa-linkedin fa-lg"></i>
+            </a>
+          </div>
+
+          <!-- Stay in Touch Column -->
+          <div class="col-lg-3 col-md-6 mb-4">
+            <h5 class="fw-bold" style="font-size: 20px">Stay in touch</h5>
+            <p class="mb-0" style="font-size: 14px">
+              Subscribe to our mailing list to get the latest updates about our
+              products & services!
+            </p>
+            <form class="d-flex flex-column mt-3">
+              <input
+                type="email"
+                class="form-control mb-2"
+                placeholder="Enter your email"
+                style="max-width: 100%; font-size: 14px; padding: 10px"
+              />
+              <button
+                class="btn btn-primary"
+                type="submit"
+                style="
+                  background-color: #e7922a;
+                  border: #e7922a;
+                  font-size: 14px;
+                  padding: 10px 20px;
+                "
+              >
+                Subscribe
+              </button>
+            </form>
+            <p class="mt-2" style="font-size: 14px">
+              We care about your data in our
+              <a href="#" style="color: #03032c">Privacy Policy</a>.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <hr />
+      <div class="container text-center">
+        <p>&copy; 2024 StyleSphere. All rights reserved.</p>
+      </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"></script>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css"
+      rel="stylesheet"
+    />
+  </body>
+</html>

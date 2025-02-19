@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Menu Page - Clothing Website</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Dancing+Script&display=swap"
+    />
+
+    <style>
+      body {
+        font-family: 'Dancing Script', cursive;
+        background-color: #fef6e4;
+        color: #5c4c40;
+      }
+
+      h1 {
+        font-family: 'Dancing Script', cursive;
+        font-size: 60px;
+        font-weight: bold;
+        color: #4c0519;
+      }
+
+      .section-heading {
+        color: #4c0519;
+        font-weight: bold;
+        text-align: center;
+        margin-top: 30px;
+        margin-bottom: 30px;
+      }
+
+      .product-card {
+        border: none;
+        border-radius: 10px;
+        transition: transform 0.3s;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      }
+
+      .product-card:hover {
+        transform: translateY(-10px);
+      }
+
+      .product-card img {
+        border-top-left-radius: 10px;
+        border-top-right-radius: 10px;
+        width: 100%;
+        height: 400px; /* Adjust height as needed */
+        object-fit: cover;
+      }
+
+      .collection-section {
+        padding: 60px 0;
+      }
+
+      .collection-title {
+        text-align: center;
+        font-size: 2rem;
+        color: #495057;
+        margin-bottom: 20px;
+      }
+
+      .btn-scroll {
+        background-color: #4c0519;
+        color: white;
+        border: none;
+        border-radius: 6px;
+      }
+
+      .btn-scroll:hover {
+        background-color: #4c0519;
+      }
+
+      @media (max-width: 768px) {
+        .product-card {
+          margin-bottom: 20px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container my-5">
+      <!-- Men's Collection Cards -->
+      <h2 class="section-heading">Men's Collection</h2>
+      <div class="row mb-5">
+        <div class="col-md-4">
+          <div class="card product-card">
+            <img src="menu/w-3.jpg" class="card-img-top" alt="Men's Stitched" />
+            <div class="card-body">
+              <h5 class="card-title">Men's Stitched</h5>
+              <p class="card-text">Explore our premium stitched collection.</p>
+              <!-- <a href="#men-stitched" class="btn btn-primary w-100"
+                >View More</a
+              > -->
+              <a href="men.html#men-stitched" class="btn btn-scroll"
+                >View Collection</a
+              >
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="card product-card">
+            <img
+              src="menu/w-1.jpg"
+              class="card-img-top"
+              alt="Men's Unstitched"
+            />
+            <div class="card-body">
+              <h5 class="card-title">Men's Unstitched</h5>
+              <p class="card-text">Discover our range of unstitched fabrics.</p>
+              <!-- <a href="#men-unstitched" class="btn btn-primary w-100"
+                >View More</a -->
+              <a href="men.html#men-unstitched" class="btn btn-scroll"
+                >View Collection</a
+              >
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="card product-card">
+            <img
+              src="menu/w-2.jpg"
+              class="card-img-top"
+              alt="Men's Core Collection"
+            />
+            <div class="card-body">
+              <h5 class="card-title">Men's Core Collection</h5>
+              <p class="card-text">Browse the essentials for every occasion.</p>
+              <!-- <a href="#men-core" class="btn btn-primary w-100">View More</a> -->
+              <a href="men.html#men-core" class="btn btn-scroll"
+                >View Collection</a
+              >
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Women's Collection Cards -->
+      <h2 class="section-heading">Women's Collection</h2>
+      <div class="row mb-5">
+        <div class="col-md-4">
+          <div class="card product-card">
+            <img
+              src="menu/w-2.jpg"
+              class="card-img-top"
+              alt="Women's Stitched"
+            />
+            <div class="card-body">
+              <h5 class="card-title">Women's Stitched</h5>
+              <p class="card-text">
+                Explore our exclusive stitched collection.
+              </p>
+              <!-- <a href="#women-stitched" class="btn btn-primary w-100"
+                >View More</a
+              > -->
+              <a
+                href="womenCollection.html#women-stitched"
+                class="btn btn-scroll"
+                >View Collection</a
+              >
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="card product-card">
+            <img
+              src="menu/w-2.jpg"
+              class="card-img-top"
+              alt="Women's Unstitched"
+            />
+            <div class="card-body">
+              <h5 class="card-title">Women's Unstitched</h5>
+              <p class="card-text">Discover our premium unstitched fabrics.</p>
+              <!-- <a href="#women-unstitched" class="btn btn-primary w-100"
+                >View More</a
+              > -->
+              <a
+                href="womenCollection.html#men-unstitched"
+                class="btn btn-scroll"
+                >View Collection</a
+              >
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="card product-card">
+            <img
+              src="menu/w-2.jpg"
+              class="card-img-top"
+              alt="Women's Core Collection"
+            />
+            <div class="card-body">
+              <h5 class="card-title">Women's Core Collection</h5>
+              <p class="card-text">Browse our timeless essentials.</p>
+              <!-- <a href="#women-core" class="btn btn-primary w-100">View More</a> -->
+              <a href="womenCollection.html#women-core" class="btn btn-scroll"
+                >View Collection</a
+              >
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+  </body>
+</html>

@@ -1,0 +1,329 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+img {
+  max-width: 100%; /* Image will scale down with the screen size */
+  height: auto;
+}
+
+body, html {
+  height: 100%;
+  font-family: Arial, Roboto, sans-serif;
+  
+}
+/* Apply to entire background */
+body, html {
+  height: 100%;
+  margin: 0;
+  font-family: Arial, Roboto, sans-serif;
+  
+}
+
+
+.line-1 {
+  
+  margin: 24px 0;
+  text-align: center;
+}
+
+.circle-logo {
+  
+  border-radius: 50%;
+}
+
+.text-sp {
+  color: rgb(153, 56, 153);
+}
+
+.line-2 {
+  justify-content: center;
+  text-align: center;
+  color: rgb(133, 49, 167);
+  font-size: 15px;
+  text-decoration: none;
+  margin-bottom: 10px;
+}
+.inner-border {
+  border: 2px solid rgb(226, 225, 225);
+  padding: 22px;
+  border-radius: 20px;
+  background-color: white;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  max-width: 400px;
+  width: 100%;
+  align-items: center;
+  justify-content: center;
+}
+
+.login-section {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.input-desc {
+  color: #a8a6a6;
+  font-size: medium;
+  padding-bottom: 2px;
+
+}
+
+.hide-eye {
+  display: flex;
+  width: 15px;
+  opacity: 0.7;
+  margin-left: 235px;
+  margin-right: 10px;
+  
+}
+
+.forget {
+  text-align: center;
+  padding-top: 20px;
+  padding-bottom: 14px;
+  font-size: 14px;
+  color: rgb(67, 6, 107);
+  font-weight: 545;
+  text-decoration: underline rgb(81, 8, 99);
+}
+
+.target {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+}
+
+.font {
+  color: #646363;
+}
+
+.check {
+  margin-top: 10px;
+}
+
+.check input[type="checkbox"] {
+  margin-right: 1px;
+  width: 16px;
+  height: 16px;
+}
+
+.font a {
+  color: rgb(77, 67, 170);
+  text-decoration: none;
+}
+
+.font a:hover {
+  text-decoration: underline;
+}
+
+.font-end {
+  color: rgb(124, 30, 136);
+  font-size: small;
+  margin-right: 20px;
+}
+
+.login-form input {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 15px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+}
+
+.login-form button {
+  width: 100%;
+  padding: 14px 20px;
+  font-size: 16px;
+  color: white;
+  border: none;
+  border-radius: 20px;
+  cursor: pointer;
+  margin-bottom: 20px;
+}
+.login-button {
+  background-color: rgb(91, 26, 121);
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.login-button:hover {
+  background-color: rgb(56, 28, 59); 
+  color: #f1e1ff; 
+}
+
+.separator {
+  display: flex;
+  align-items: center;
+  text-align: center;
+  margin: 20px 0;
+}
+.separator::before,
+.separator::after {
+  content: "";
+  flex: 1;
+  border-bottom: 1px solid #dcdcdc;
+}
+
+.separator::before {
+  margin-right: 10px;
+}
+
+.separator::after {
+  margin-left: 10px;
+}
+
+
+.separator {
+  display: flex;
+  align-items: center;
+  text-align: center;
+  margin: 20px 0;
+}
+
+
+
+.apple-button,
+.google-btn {
+  display: flex;
+  align-items: center;
+  color: #807b7b;
+  padding: 10px 20px;
+  border: 3px solid black;
+  border-radius: 5px;
+  background-color: rgb(245, 240, 240);
+  font-size: 16px;
+  font-weight: 700;
+  cursor: pointer;
+  margin: 10px 0;
+  opacity: 1;
+}
+
+.google-btn .icon,
+.apple-button .icon {
+  width: 20px;
+  height: 20px;
+  margin-left: 40px;
+  margin-right: 10px;
+
+}
+
+.google-btn:hover,
+.apple-button:hover {
+  background-color: #f5f5f5;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.15);
+}
+
+.end {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
+  text-align: center;
+}
+
+.sign-up {
+  background-color: #0e0d0d;
+  padding: 0%;
+  width: fit-content;
+  margin-top: 20px;
+}
+
+.sign-up:hover {
+  background-color:rgb(91, 26, 121);
+  transition: 0.3s;
+  cursor: pointer;
+}
+
+
+@media (min-width: 768px) {
+  .column {
+      flex: 1 1 50%; /* Take 50% width on larger screens */
+  }
+}
+/* Responsive Design for Smaller Screens */
+@media (max-width: 768px) {
+  .inner-border {
+    max-width: 90%; /* Adjust width for smaller screens */
+    padding: 15px;
+  }
+
+  .hide-eye {
+    margin-left: auto; /* Adjust for better placement on smaller screens */
+  }
+
+  .login-section {
+    padding: 20px; /* Add padding to make the form more centered */
+  }
+
+  .login-form button {
+    font-size: 14px;
+  }
+
+  .google-btn .icon,
+  .apple-button .icon {
+    margin-left: 10px; /* Adjust margin for smaller buttons */
+  }
+
+  .end {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .font-end {
+    margin-bottom: 10px;
+  }
+
+  .sign-up {
+    margin-top: 10px;
+    width: 100%;
+  }
+}
+
+/* Even smaller screens (Mobile) */
+@media (max-width: 576px) {
+  .line-1 img {
+    width: 40px; /* Smaller logo for mobile */
+    height: 40px;
+  }
+
+  h3 {
+    font-size: 18px; /* Smaller text size for mobile */
+  }
+
+  .input-desc {
+    font-size: 14px;
+  }
+
+  .login-form input {
+    font-size: 14px;
+  }
+
+  .google-btn,
+  .apple-button {
+    padding: 8px 10px;
+    font-size: 14px;
+  }
+
+  .google-btn .icon,
+  .apple-button .icon {
+    width: 18px; /* Smaller icons */
+    height: 18px;
+  }
+}
+
+/* Full screen adjustments */
+@media (min-width: 1200px) {
+  .inner-border {
+    max-width: 400px; /* Centralized size for large screens */
+  }
+
+  .login-section {
+    padding: 40px; /* Spacing for a better look on large screens */
+  }
+}

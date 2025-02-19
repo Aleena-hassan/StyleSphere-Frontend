@@ -1,0 +1,42 @@
+/* General Styles
+body {
+  font-family: 'Arial', sans-serif;
+}
+
+.cart-page-bg {
+  background-color: #fef6e4;
+}
+
+.confirmation-page-bg {
+  background-color: #fff4e3;
+}
+
+.text-brown {
+  color: #a67b5b;
+}
+
+.text-light-brown {
+  color: #d4a373;
+}
+
+.btn-brown {
+  background-color: #a67b5b;
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  font-weight: bold;
+}
+
+.btn-brown:hover {
+  background-color: #8b5e3c;
+}
+
+.table-light-brown {
+  background-color: #fbe9d3;
+  color: #5c4c40;
+}
+
+.card {
+  border: 1px solid #d4a373;
+  border-radius: 10px;
+} */

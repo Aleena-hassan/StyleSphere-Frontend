@@ -1,0 +1,366 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>woMen's Collection - Clothing Website</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css?family=Source+Sans+Pro"
+      rel="stylesheet"
+      type="text/css"
+    />
+    <style>
+      body {
+        font-family: 'Arial', sans-serif;
+        background-color: #fef6e4;
+        color: #5c4c40;
+      }
+      h1,
+      p {
+        /* color: #e11d48; */
+        color: #e67e22;
+      }
+      h1 {
+        font-family: 'Source Sans Pro', sans-serif;
+      }
+      .section-heading {
+        color: #e67e22;
+        font-weight: bold;
+        text-align: center;
+        margin-top: 30px;
+        margin-bottom: 30px;
+      }
+
+      .product-card {
+        border: none;
+        border-radius: 10px;
+        transition: transform 0.3s;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      }
+
+      .product-card:hover {
+        transform: translateY(-10px);
+      }
+
+      .product-card img {
+        border-top-left-radius: 10px;
+        border-top-right-radius: 10px;
+        width: 100%;
+        height: 300px; /* Adjust height as needed */
+        object-fit: cover;
+      }
+
+      .collection-section {
+        padding: 60px 0;
+      }
+
+      .collection-title {
+        text-align: center;
+        font-size: 2rem;
+        color: #495057;
+        margin-bottom: 20px;
+      }
+
+      .btn-scroll {
+        background-color: #e67e22;
+        color: white;
+        border: none;
+        border-radius: 6px;
+        transition: background-color 0.3s;
+      }
+
+      .btn-scroll:hover {
+        background-color: #d35400;
+      }
+
+      /* Video Section Styling */
+      .video-section {
+        position: relative;
+        width: 100%;
+        height: 80vh;
+      }
+
+      .video-section video {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+
+      .video-overlay {
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        /* background: rgba(0, 0, 0, 0.5); */
+        color: white;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        padding: 20px;
+      }
+
+      .video-overlay h1 {
+        font-size: 3rem;
+        font-weight: bold;
+        margin: 0;
+      }
+
+      .video-overlay p {
+        font-size: 1.2rem;
+        margin-top: 20px;
+      }
+
+      /* Responsive Design */
+      @media (max-width: 768px) {
+        .product-card {
+          margin-bottom: 20px;
+        }
+
+        .product-card img {
+          height: 200px;
+        }
+
+        .video-overlay h1 {
+          font-size: 2.5rem;
+        }
+
+        .video-overlay p {
+          font-size: 1rem;
+        }
+      }
+
+      @media (max-width: 576px) {
+        .product-card img {
+          height: 150px;
+        }
+
+        .section-heading {
+          font-size: 1.5rem;
+          margin-top: 20px;
+          margin-bottom: 20px;
+        }
+
+        .collection-title {
+          font-size: 1.5rem;
+        }
+
+        .video-overlay h1 {
+          font-size: 2rem;
+        }
+
+        .video-overlay p {
+          font-size: 0.9rem;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container my-5">
+      <!-- Video Section with Overlay Text -->
+      <div class="video-section">
+        <video
+          class="w-100"
+          autoplay
+          muted
+          loop
+          style="object-fit: cover; height: 80vh"
+        >
+          <source
+            src="collectionVideos/856434-hd_1920_1080_25fps.mp4"
+            type="video/mp4"
+          />
+          Your browser does not support the video tag.
+        </video>
+        <div class="video-overlay">
+          <div>
+            <h1>Embrace Elegance with Our Collection</h1>
+            <p>
+              Unstitched, Stitched, and Exclusive Ensembles Designed to
+              Celebrate Your Unique Style and Grace.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <!-- woMen's Unstitched Collection -->
+      <h2 class="section-heading" id="women-unstitched">
+        Women's Unstitched Collection
+      </h2>
+      <div class="row mb-5">
+        <div class="col-md-4">
+          <div class="card product-card">
+            <img
+              src="menu/un-1.jpg"
+              class="card-img-top"
+              alt="Men's Unstitched 1"
+            />
+            <div class="card-body">
+              <h5 class="card-title">Women's Unstitched 1</h5>
+
+              <a href="sampleProductViewer.html" class="btn btn-scroll"
+                >View
+              </a>
+              <a href="cart.html" class="btn btn-scroll">Add to Cart </a>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="card product-card">
+            <img
+              src="menu/un-2.jpg"
+              class="card-img-top"
+              alt="Men's Unstitched 2"
+            />
+            <div class="card-body">
+              <h5 class="card-title">Women's Unstitched 2</h5>
+
+              <a href="sampleProductViewer.html" class="btn btn-scroll"
+                >View
+              </a>
+              <a href="cart.html" class="btn btn-scroll">Add to Cart </a>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="card product-card">
+            <img
+              src="menu/un-5.jpg"
+              class="card-img-top"
+              alt="Men's Unstitched 3"
+            />
+            <div class="card-body">
+              <h5 class="card-title">Women's Unstitched 3</h5>
+
+              <a href="sampleProductViewer.html" class="btn btn-scroll"
+                >View
+              </a>
+              <a href="cart.html" class="btn btn-scroll">Add to Cart </a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- woMen's Stitched Collection -->
+      <h2 class="section-heading" id="women-stitched">
+        Women's Stitched Collection
+      </h2>
+      <div class="row mb-5">
+        <div class="col-md-4">
+          <div class="card product-card">
+            <img
+              src="menu/stichedwomen.jpg"
+              class="card-img-top"
+              alt="Men's Stitched 1"
+            />
+            <div class="card-body">
+              <h5 class="card-title">Women's Stitched 1</h5>
+
+              <a href="sampleProductViewer.html" class="btn btn-scroll"
+                >View
+              </a>
+              <a href="cart.html" class="btn btn-scroll">Add to Cart </a>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="card product-card">
+            <img
+              src="menu/w-stitched1.jpg"
+              class="card-img-top"
+              alt="Men's Stitched 2"
+            />
+            <div class="card-body">
+              <h5 class="card-title">Women's Stitched 2</h5>
+
+              <a href="sampleProductViewer.html" class="btn btn-scroll"
+                >View
+              </a>
+              <a href="cart.html" class="btn btn-scroll">Add to Cart </a>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="card product-card">
+            <img
+              src="menu/w-sti.jpg"
+              class="card-img-top"
+              alt="Men's Stitched 3"
+            />
+            <div class="card-body">
+              <h5 class="card-title">Women's Stitched 3</h5>
+
+              <a href="sampleProductViewer.html" class="btn btn-scroll"
+                >View
+              </a>
+              <a href="cart.html" class="btn btn-scroll">Add to Cart </a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Men's Core Collection -->
+      <h2 class="section-heading" id="women-core">Women's Core Collection</h2>
+      <div class="row mb-5">
+        <div class="col-md-4">
+          <div class="card product-card">
+            <img
+              src="menu/w-core (2).jpg"
+              class="card-img-top"
+              alt="Men's Core 1"
+            />
+            <div class="card-body">
+              <h5 class="card-title">Women's Core 1</h5>
+
+              <a href="sampleProductViewer.html" class="btn btn-scroll"
+                >View
+              </a>
+              <a href="cart.html" class="btn btn-scroll">Add to Cart </a>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="card product-card">
+            <img
+              src="menu/w-core-1.jpg"
+              class="card-img-top"
+              alt="Men's Core 2"
+            />
+            <div class="card-body">
+              <h5 class="card-title">Women's Core 2</h5>
+
+              <a href="sampleProductViewer.html" class="btn btn-scroll"
+                >View
+              </a>
+              <a href="cart.html" class="btn btn-scroll">Add to Cart </a>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="card product-card">
+            <img
+              src="menu/w-core3.jpg"
+              class="card-img-top"
+              alt="Men's Core 3"
+            />
+            <div class="card-body">
+              <h5 class="card-title">Woen's Core 3</h5>
+
+              <a href="sampleProductViewer.html" class="btn btn-scroll"
+                >View
+              </a>
+              <a href="cart.html" class="btn btn-scroll">Add to Cart </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+  </body>
+</html>

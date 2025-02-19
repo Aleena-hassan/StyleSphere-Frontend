@@ -1,0 +1,105 @@
+/* Reset */
+body,
+html {
+  height: 100%;
+  font-family: Arial, sans-serif;
+  background-color: #edf0f3;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Left Side */
+.left-side {
+  flex: 1;
+  background: url("image/loginBackGround.webp") no-repeat center center;
+  background-size: cover;
+}
+
+/* Right Side */
+.right-side {
+  flex: 1;
+  /* background: #fef2f2; */
+  background: rgba(134, 92, 92, 0.7);
+  padding-top: 20px;
+}
+
+/* Logo */
+img {
+  margin-bottom: 10px;
+}
+
+/* Input Fields */
+input {
+  border-radius: 8px;
+}
+
+
+/* Social Buttons */
+.social-btn {
+  border: none;
+  background-color: #f5f5f5; /* Light neutral background */
+  padding: 8px 16px;
+  border-radius: 14px;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+  transition: all 0.3s ease; /* Smooth transition */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: 'Arial', sans-serif;
+  font-weight: bold;
+  color: #333;
+}
+.login-btn,.sign-up-btn{
+  padding: 8px 16px;
+  border-radius: 14px;
+   transition: all 0.3s ease; /*Smooth transition */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 600;
+}
+/* Icon Size */
+.icon {
+  width: 22px;
+  height: 22px;
+}
+
+/* Hover Effect */
+.social-btn:hover,.login-btn:hover ,.sign-up-btn:hover{
+  background-color: #e2e2e2; /* Slightly darker background on hover */
+  box-shadow: 0px 6px 10px rgba(0, 0, 0, 0.1); /* Elevate the button */
+  transform: translateY(-2px); /* Lift the button on hover */
+  cursor: pointer;
+}
+
+/* Google Button Specific Style */
+.google-btn,.apple-btn  {
+  background-color: #f5f5f5;
+}
+
+
+/* Responsiveness */
+@media (max-width: 768px) {
+  .social-btn {
+    padding: 10px 15px;
+    font-size: 14px;
+  }
+
+  .icon {
+    width: 18px;
+    height: 18px;
+  }
+}
+
+/* Separator */
+.text-white {
+  color: white !important;
+}
+
+.end {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
+  text-align: center;
+}
